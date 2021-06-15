@@ -36,10 +36,10 @@ func Generate(to int) ([]int, error) {
 
 	x2 := 0
 	n := 0
-	for i := 1; i < sieve_lim; i++ {
+	for i := 1; i <= sieve_lim; i++ {
 		x2 += 2*i - 1
 		y2 := 0
-		for j := 1; j < sieve_lim; j++ {
+		for j := 1; j <= sieve_lim; j++ {
 			y2 += 2*j - 1
 			n = 4*x2 + y2
 
@@ -89,7 +89,7 @@ func Generate(to int) ([]int, error) {
 	res[1] = 3
 	res[2] = 5
 	idx := 3
-	for i := 6; i < to; i++ {
+	for i := 6; i <= to; i++ {
 		if is_prime[i] {
 			res[idx] = i
 			idx++

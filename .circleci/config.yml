@@ -19,6 +19,7 @@ jobs:
     working_directory: /go/src/github.com/gomth/primes
     steps:
       - checkout
+      - run: go mod init
       - run: go build
       - run:
           name: "Create a temp directory for artifacts"

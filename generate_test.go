@@ -90,3 +90,16 @@ func TestGenerateForRange(t *testing.T) {
 		t.Errorf("Generate(0, 50) failed.\nExpected: %v\nActual: %v", expected, actual)
 	}
 }
+
+func TestGenerateBoundsCheck(t *testing.T) {
+	actual, err := Generate(7)
+	if err != nil {
+		t.Errorf("generate(7) failed.\nError: %v", err)
+	}
+
+	expected := []int{2, 3, 5, 7}
+
+	if !cmp(actual, expected) {
+		t.Errorf("generate(7) failed.\nExpected: %v\nActual: %v", expected, actual)
+	}
+}
