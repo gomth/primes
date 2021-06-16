@@ -17,8 +17,8 @@ func cmp(left []int, right []int) bool {
 	return true
 }
 
-func TestGenerateInvalid(t *testing.T) {
-	actual, err := Generate(-1)
+func TestGenerateAtkinInvalid(t *testing.T) {
+	actual, err := GenerateAtkin(-1)
 	if err == nil {
 		t.Errorf("GenerateInvalid failed.\nError expected")
 	}
@@ -28,8 +28,8 @@ func TestGenerateInvalid(t *testing.T) {
 	}
 }
 
-func TestGenerate5(t *testing.T) {
-	actual, err := Generate(5)
+func TestGenerateAtkin5(t *testing.T) {
+	actual, err := GenerateAtkin(5)
 	if err != nil {
 		t.Errorf("generate(5) failed.\nError: %v", err)
 	}
@@ -41,8 +41,8 @@ func TestGenerate5(t *testing.T) {
 	}
 }
 
-func TestGenerate2(t *testing.T) {
-	actual, err := Generate(2)
+func TestGenerateAtkin2(t *testing.T) {
+	actual, err := GenerateAtkin(2)
 	if err != nil {
 		t.Errorf("generate(2) failed.\nError: %v", err)
 	}
@@ -54,8 +54,8 @@ func TestGenerate2(t *testing.T) {
 	}
 }
 
-func TestGenerate3(t *testing.T) {
-	actual, err := Generate(3)
+func TestGenerateAtkin3(t *testing.T) {
+	actual, err := GenerateAtkin(3)
 	if err != nil {
 		t.Errorf("generate(3) failed.\nError: %v", err)
 	}
@@ -67,8 +67,8 @@ func TestGenerate3(t *testing.T) {
 	}
 }
 
-func TestGenerateInvalidRange(t *testing.T) {
-	actual, err := Generate(1)
+func TestGenerateAtkinInvalidRange(t *testing.T) {
+	actual, err := GenerateAtkin(1)
 	if err != nil {
 		t.Errorf("generate(1) failed.\nError: %v", err)
 	}
@@ -78,8 +78,8 @@ func TestGenerateInvalidRange(t *testing.T) {
 	}
 }
 
-func TestGenerateForRange(t *testing.T) {
-	actual, err := Generate(50)
+func TestGenerateAtkinForRange(t *testing.T) {
+	actual, err := GenerateAtkin(50)
 	if err != nil {
 		t.Errorf("Generate(0, 50) failed.\nError: %v", err)
 	}
@@ -91,8 +91,8 @@ func TestGenerateForRange(t *testing.T) {
 	}
 }
 
-func TestGenerateBoundsCheck(t *testing.T) {
-	actual, err := Generate(7)
+func TestGenerateAtkinBoundsCheck(t *testing.T) {
+	actual, err := GenerateAtkin(7)
 	if err != nil {
 		t.Errorf("generate(7) failed.\nError: %v", err)
 	}
