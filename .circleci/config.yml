@@ -29,7 +29,6 @@ jobs:
             mkdir -p /tmp/artifacts
       - run:
           command: |
-            echo $DOCKERHUB_USER
             go test -benchmem -benchtime 500x -bench . -coverprofile c.out -cpuprofile cpu.out -memprofile mem.out
             go tool cover -html c.out -o coverage.html
             mv coverage.html /tmp/artifacts

@@ -87,7 +87,9 @@ func GenerateAtkin(to int) ([]int, error) {
 	res := make([]int, primesCount, primesCount)
 	res[0] = 2
 	res[1] = 3
-	res[2] = 5
+	if primesCount >= 3 {
+		res[2] = 5
+	}
 	idx := 3
 	for i := 6; i <= to; i++ {
 		if isPrime[i] {
