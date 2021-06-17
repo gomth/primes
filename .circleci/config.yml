@@ -32,6 +32,5 @@ jobs:
             go test -benchmem -benchtime 500x -bench . -coverprofile c.out -cpuprofile cpu.out -memprofile mem.out
             go tool cover -html c.out -o coverage.html
             mv coverage.html /tmp/artifacts
-      - coveralls/upload
       - store_artifacts:
           path: /tmp/artifacts
