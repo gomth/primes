@@ -41,6 +41,19 @@ func TestGenerateAtkin5(t *testing.T) {
 	}
 }
 
+func TestGenerateAtkin4(t *testing.T) {
+	actual, err := GenerateAtkin(4)
+	if err != nil {
+		t.Errorf("generate(4) failed.\nError: %v", err)
+	}
+
+	expected := []int{2, 3}
+
+	if !cmp(actual, expected) {
+		t.Errorf("generate(4) failed.\nExpected: %v\nActual: %v", expected, actual)
+	}
+}
+
 func TestGenerateAtkin2(t *testing.T) {
 	actual, err := GenerateAtkin(2)
 	if err != nil {

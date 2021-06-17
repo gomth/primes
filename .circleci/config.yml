@@ -2,6 +2,8 @@
 #
 # Check https://circleci.com/docs/2.0/language-go/ for more details
 version: 2.1
+orbs:
+  coveralls: coveralls/coveralls@1.0.6
 jobs:
   build:
     docker:
@@ -28,8 +30,9 @@ jobs:
       - run:
           command: |
             echo $DOCKERHUB_USER
-            go test -coverprofile c.out
+            go test -benchmem -benchtime 500x -bench . -coverprofile c.out -cpuprofile cpu.out -memprofile mem.out
             go tool cover -html c.out -o coverage.html
             mv coverage.html /tmp/artifacts
+      - coveralls/upload
       - store_artifacts:
           path: /tmp/artifacts
