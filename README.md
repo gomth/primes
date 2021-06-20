@@ -21,6 +21,7 @@ if err != nil {
 ##### Package contents:
 | API | Engine | time complexity | space complexity | Details |
 | ------ | ------ | ------ | ------ | ------ |
+| Generate | [Sieve of Eratosthenes mod.][erat] | O(\frac{n}{2}log(log\;n)) | O(\frac{n}{2}) | mod. by skipping all even numbers |
 | GenerateEratosthenes | [Sieve of Eratosthenes mod.][erat] | O(\frac{n}{2}log(log\;n)) | O(\frac{n}{2}) | mod. by skipping all even numbers |
 | GenerateAtkin | [Sieve of Atkin][atkin] | O(\frac{n^{\frac{1}{2}}}{log\;n}) | O(n) | - |
 
